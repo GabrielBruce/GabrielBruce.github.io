@@ -197,7 +197,7 @@ nav a:hover{
 
 /*---Media---*/
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 520px){
     /*---Mobile Navbar---*/
     .responsive li{
         float: none;
