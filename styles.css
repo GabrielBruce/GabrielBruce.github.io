@@ -184,6 +184,8 @@ nav a:hover{
     font-size: 30px;
     position: absolute;
     right: 10px;
+    top: 3px;
+    bottom: auto;
     margin-bottom: 1px;
     border: 3px outset;
     border-radius: 20%;
@@ -227,7 +229,10 @@ nav a:hover{
     }
     #dropdown-icon{
         display: block;
-        margin-top: 1px;
+    }
+    .responsive #dropdown-icon{
+        bottom: 2px;
+        top: auto;
     }
     /*---Mobile Section 1---*/
     .section-1{
