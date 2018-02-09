@@ -11,11 +11,51 @@ function navMenu(){
     }
 }
 
-function flip(face){
-    if (face == 1){document.getElementById("cube").className = "show-front";}
-    else if (face == 2){document.getElementById("cube").className = "show-back";}
-    else if (face == 3){document.getElementById("cube").className = "show-right";}
-    else if (face == 4){document.getElementById("cube").className = "show-left";}
-    else if (face == 5){document.getElementById("cube").className = "show-top";}
-    else if (face == 6){document.getElementById("cube").className = "show-bottom";}
+function turn(val) {
+    var face = document.getElementById(val + "-face");
+    var cube = document.getElementById("cube");
+    
+    if (cube.className == ("turn-" + val) && face.classList.contains("flipped")){
+        flip();
+    }
+    else {
+        cube.className = "turn-" + val;
+        if (face.classList.contains("flipped")){
+            setTimeout(flip, 1500);
+        }
+    }
+}
+
+function turnFlip(val){
+    var face = document.getElementById(val + "-face");
+    var cube = document.getElementById("cube");
+    
+    if (cube.className == "turn-" + val && 
+        face.classList.contains("flipped") == false){
+        flip();
+    }
+    else if (face.classList.contains("flipped")){
+        document.getElementById("cube").className = "turn-" + val;
+    }
+    else {
+        document.getElementById("cube").className = "turn-" + val;
+        setTimeout(flip, 1500);
+    }
+}
+
+function flip() {
+    var curFace = document.getElementById("cube").className;
+    
+    if (curFace == "turn-front") {
+        document.getElementById("front-face").classList.toggle("flipped");}
+    else if (curFace == "turn-back") {
+        document.getElementById("back-face").classList.toggle("flipped");}
+    else if (curFace == "turn-left") {
+        document.getElementById("left-face").classList.toggle("flipped");}
+    else if (curFace == "turn-right") {
+        document.getElementById("right-face").classList.toggle("flipped");}
+    else if (curFace == "turn-top") {
+        document.getElementById("top-face").classList.toggle("flipped");}
+    else if (curFace == "turn-bottom") {
+        document.getElementById("bottom-face").classList.toggle("flipped");}
 }
