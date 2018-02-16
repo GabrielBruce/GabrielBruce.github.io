@@ -36,8 +36,8 @@ body{
     --margin: 20px;
     position: fixed;
     font-size: 0;
-    left: calc(50vh - calc(var(--load-size) * 3/2));
-    top: calc(50vh - calc(var(--load-size) * 3/2));
+    left: calc(50% - calc(var(--load-size) * 3/2));
+    top: calc(50% - calc(var(--load-size) * 3/2));
     z-index: 200;
 }
     
