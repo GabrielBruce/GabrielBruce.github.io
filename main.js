@@ -1,3 +1,14 @@
+function loaded(){
+    document.getElementById("loading-container").classList.add("loaded");
+    document.getElementById("loaded-wrapper").classList.add("loaded");
+    setTimeout(function(){
+        document.getElementById("loaded-wrapper").style.display = "none";
+        document.getElementById("loading-container").style.display = "none";
+    }, 5000)
+}
+
+setTimeout(loaded, 4000);
+
 function navMenu(){
     var icon = document.getElementById("dropdown-icon");
     var menu = document.getElementById("dropdown-menu");

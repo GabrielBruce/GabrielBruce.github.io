@@ -8,6 +8,63 @@ body{
     width: 100%;
 }
 
+/*---Loading Animation---*/
+
+#loaded-wrapper.loaded{
+    opacity: 0;
+    transition: opacity 5s;
+    pointer-events: none;
+}
+
+#loading-container.loaded{
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+}
+
+#loaded-wrapper{
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #404040;
+    z-index: 150;
+}
+
+#loading-container{
+    --load-size: 50px;
+    --margin: 20px;
+    position: fixed;
+    font-size: 0;
+    left: calc(50vh - calc(var(--load-size) * 3/2));
+    top: calc(50vh - calc(var(--load-size) * 3/2));
+    z-index: 200;
+}
+    
+#loading-container span{
+    width: var(--load-size);
+    height: var(--load-size);       
+    display: inline-block;
+    animation: morph 2s infinite alternate ease-in-out;
+}
+    
+@keyframes morph{
+    from{
+        margin: 0;
+        border-radius: 0;
+        box-shadow: 5px 5px black;
+        background: #ff9000;
+        transform: translateY(0);
+    }
+    to{
+        background: lightblue;
+        margin: var(--margin);
+        border-radius: 50%;
+        box-shadow: 5px 5px gray;
+        transform: translateY(calc(var(--margin) * -3)) translateX(calc(var(--margin) * -3)); 
+    }
+}
+
 /*---Section 1---*/
 
 .section-1{
@@ -382,3 +439,5 @@ nav a:hover{
         justify-items: left;
     }
 }
+
+img[src*="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"]{display: none;}
