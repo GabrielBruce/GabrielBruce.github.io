@@ -38,15 +38,10 @@
         <div class="login">
             <div>
                 <h1>Example Website</h1>
-                <h2>Have Fun!</h2>
                 <h2>Enjoy the music</h2>
+                <h2>Leave me a message</h2>
+                <h2>Have Fun!</h2>
             </div>
-            <form>
-                <h2>Username</h2>
-                <input class="inputbox" type="text" placeholder="Username">
-                <h2>Password</h2>
-                <input class="inputbox" type="password" placeholder="Password">
-            </form>
         </div>
         <img class="profile" src="profile.jpg">
         <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/UifHKChtzDI?rel=0;&autoplay=1&loop=1&playlist=UifHKChtzDI" frameborder="0" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>
@@ -99,8 +94,9 @@
             <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
         </div>
     </div>
+
     <div class="cube-container-grid">
-        <div class="cube-buttons">
+        <div id="cube-buttons-left" class="cube-buttons">
             <button onclick="turn('front')">front</button>
             <button onclick="turn('back')">back</button>
             <button onclick="turn('left')">left</button>
@@ -154,7 +150,7 @@
                 </div>
             </div>
         </div>
-        <div class="cube-buttons">
+        <div id="cube-buttons-right" class="cube-buttons">
             <button onclick="turnFlip('front')">frontFlip</button>
             <button onclick="turnFlip('back')">backFlip</button>
             <button onclick="turnFlip('left')">leftFlip</button>
@@ -165,55 +161,39 @@
     </div>
     
     <hr>
-    <div class="section-4">
-        <article>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </article>
-        <p>What should go here? Hmm...<br>Maybe more latin?<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>Sure that works I guess.</p>
-    </div>
-    <div>
-        
+    <div id="contact" class="contact">
+        <h1>Contact Me!</h1>
+        <form name="contactForm" method="post" action="email.php">
+        <input type="text" placeholder="First Name" name="first_name">
+        <input type="text" placeholder="Last Name" name="last_name">
+        <br>
+        <input type="email" placeholder="e-mail" name="email">
+        <br>
+        <input type="text" placeholder="Subject" name="subject">
+        <br>
+        <textarea rows="6" cols="45" placeholder="What can I do for you?" name="message"></textarea>
+        <br>
+        <input type="submit" name="submit" value="Send Message">
+        </form>
     </div>
     
-    <footer id="contact">
-        <div class="footer-container">
-            <div>
-                <h2>My Links</h2>
-                <ul>
-                    <li>
-                        <a href="https://www.linkedin.com/in/j-gabriel-bruce-a1a731129/" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.freecodecamp.com/gabrielbruce" target="_blank"><i class="fa fa-free-code-camp"></i></a>
-                    </li>
-                    <li>
-                        <a class="btn col-sm-2 social-link" href="https://github.com/gabrielbruce" target="_blank"><i class="fa fa-github"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2>Company</h2>
-                <ul>
-                    <li>About</li>
-                    <li>Our Story</li>
-                    <li>Careers</li>
-                </ul>
-            </div>
-            <div>
-                <h2>Links</h2>
-                <ul>
-                    <li>News</li>
-                    <li>Blogs</li>
-                    <li>Media</li>
-                </ul>
-            </div>
-            <div>
-                <h2>Products</h2>
-                <ul>
-                    <li>Available</li>
-                    <li>In Development</li>
-                    <li>Manuals</li>
-                </ul>
+    <footer>
+        <div class="footer">
+            <h1>My Links</h1>
+            <div class="footer-container">
+                <div>
+                    <a href="https://www.linkedin.com/in/j-gabriel-bruce-a1a731129/" target="_blank"><i class="fa fa-linkedin"></i>
+                    <h2>LinkedIn</h2></a>
+                    
+                </div>
+                <div>
+                    <a href="https://www.freecodecamp.com/gabrielbruce" target="_blank"><i class="fa fa-free-code-camp"></i>
+                    <h2>FreeCodeCamp</h2></a>
+                </div>
+                <div>
+                    <a class="btn col-sm-2 social-link" href="https://github.com/gabrielbruce" target="_blank"><i class="fa fa-github"></i>
+                    <h2>GitHub</h2></a>
+                </div>
             </div>
         </div>
     </footer>

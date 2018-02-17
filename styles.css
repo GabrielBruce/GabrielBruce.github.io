@@ -251,41 +251,63 @@ label{
 #cube.turn-top{transform: translateZ(calc(var(--cube-size) / -2)) rotateX(-90deg);}
 #cube.turn-bottom{transform: translateZ(calc(var(--cube-size) / -2)) rotateX(90deg);}
 
-/*---Section 4---*/
+/*---Contact---*/
 
-.section-4{
-    display: grid;
-    grid-template-columns: 7fr 5fr;
+.contact{
+    text-align: center;
 }
 
-article p{
-    font-size: 28px;
-    padding: 30px;
+.contact input{
+    font-size: 20px;
+    text-align: center;
+    border: 3px solid black;
+    box-shadow: 3px 3px 3px 3px lightblue;
+    border-radius: 20px;
+}
+
+.contact textarea{
+    font-size: 24px;
+    text-align: center;
+    border: 3px solid black;
+    box-shadow: 3px 3px 3px 3px lightblue;
+    border-radius: 24px;
+}
+
+input[type="submit"]{
+    background: #aeffa5;
+    font-weight: bold;
+    padding: 10px;
 }
 
 /*---Footer---*/
 
-.footer-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.footer{
+    margin-top: 50px;
     background: gray;
     justify-items: center;
+    text-align: center;
 }
 
-footer h2{
+.footer-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer h1{
+    color: white;
+    margin: 15px;
+}
+
+.footer h2{
     color: white;
 }
 
-footer ul{
-    list-style: none;
-    text-align: left;
-    padding-left: 0;
-    line-height: 1.5;
+.footer a{
+    text-decoration: none;
 }
 
-footer li{
-    color: white;
-    font-size: 22px;
+.footer i{
+    font-size: 55px;
 }
 
 /*---Navbar---*/
@@ -429,14 +451,9 @@ nav a:hover{
     .codepen{
         max-width: 80%;
     }
-    /*---Mobile Section 4---*/
-    .section-4{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    /*---Mobile Footer---*/
-    .footer-container{
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: left;
+    /*---Footer---*/
+    .footer h2{
+    font-size: 20px;
     }
 }
 
