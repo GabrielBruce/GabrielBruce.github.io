@@ -162,33 +162,73 @@ label{
 /*---Code Cube---*/
 
 .cube-container-grid{
+    --button-width: 350px;
+    --button-height: 100px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: var(--button-width) auto auto auto var(--button-width);
     align-items: center;
-    justify-items: center;
     margin: 0 auto;
 }
 
-.cube-buttons button{
-    border: 4px outset gray;
-    background: gray;
-    color: white;
-    border-radius: 40%;
-    font-size: 30px;
-    width: 200px;
-    height: 80px;
-    margin: 50px auto 50px auto;
-    display: block;
+.cube-buttons{
+    margin-bottom: 80px;
 }
 
-.cube-buttons button:hover{
-    box-shadow: 0 0 25px 10px #ff9000;
+.cube-buttons button{
+    border: 2px outset #606060;
+    background: gray;
+    color: white;
+    font-size: 35px;
+    width: var(--button-width);
+    height: var(--button-height);
+    display: block;
+    transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
+}
+
+#cube-buttons-left button{
+    box-shadow: 5px 5px 5px black;
+    transform: skewY(30deg);
+    position: relative;
+    left: 0;
+}
+
+#cube-buttons-right button{
+    box-shadow: -5px 5px 5px black;
+    transform: skewY(-30deg);
+    position: relative;
+    right: 0;
+}
+
+#cube-buttons-left button:hover{
     text-shadow: 0 0 10px white;
-    border: 4px inset gray;
+    box-shadow: 5px 5px 5px #ff9000;
+    width: calc(var(--button-width) + 10px);
+}
+
+#cube-buttons-left button:focus{
+    text-shadow: 2px 2px 15px lightgreen, -2px -2px 15px lightgreen;
+    box-shadow: 5px 5px 15px lightgreen;
+    border: 2px outset lightgreen;
+    width: calc(var(--button-width) + 10px);
+}
+
+#cube-buttons-right button:hover{
+    text-shadow: 0 0 10px white;
+    box-shadow: -5px 5px 5px #ff9000;
+    width: calc(var(--button-width) + 10px);
+    transform: translateX(-10px) skewY(-30deg);
+}
+
+#cube-buttons-right button:focus{
+    text-shadow: 2px 2px 15px lightgreen, -2px -2px 15px lightgreen;
+    box-shadow: -5px 5px 15px lightgreen;
+    border: 2px outset lightgreen;
+    width: calc(var(--button-width) + 10px);
+    transform: translateX(-10px) skewY(-30deg);
 }
 
 .cube-container{
-    --cube-size: 800px;/*Change size of cube with this variable*/
+    --cube-size: 1000px;/*Change size of cube with this variable*/
     --cube-border: 2px;/*Change width of border and face elements*/
 	width: var(--cube-size);
 	height: var(--cube-size);
@@ -376,14 +416,21 @@ nav a:hover{
 /*---Media---*/
 
 @media screen and (max-width: 1200px), (max-device-width: 1024px){
-    .cube-buttons button{
-        margin: 20px;
-        font-size: 20px;
-        width: 150px;
-        height: 60px
+    .cube-container-grid{
+        --button-width: 150px;
     }
     .cube-container{
-        --cube-size: 400px;
+        --cube-size: 600px;
+    }
+}
+
+@media screen and (max-width: 800px), (max-device-width: 736px){
+    .cube-container-grid{
+        --button-width: 200px;
+        --button-height: 80px;
+    }
+    .cube-container{
+        --cube-size: 450px;
     }
 }
 
