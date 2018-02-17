@@ -228,7 +228,7 @@ label{
 }
 
 .cube-container{
-    --cube-size: 1000px;/*Change size of cube with this variable*/
+    --cube-size: 800px;/*Change size of cube with this variable*/
     --cube-border: 2px;/*Change width of border and face elements*/
 	width: var(--cube-size);
 	height: var(--cube-size);
@@ -424,10 +424,13 @@ nav a:hover{
     }
 }
 
-@media screen and (max-width: 800px), (max-device-width: 736px){
+@media screen and (max-width: 800px), (max-device-width: 736px), (max-device-height: 375px){
+    .portfolio-target{
+        margin-bottom: -50px;
+    }
     .cube-container-grid{
         --button-width: 200px;
-        --button-height: 80px;
+        --button-height: 60px;
     }
     .cube-container{
         --cube-size: 450px;
