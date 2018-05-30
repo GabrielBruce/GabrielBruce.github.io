@@ -23,21 +23,21 @@
     <nav>
         <ul id="dropdown-menu" class="">
             <div class="nav-left">
-                <li class="topnav"><a href="#">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="topnav"><a onclick="closeNavMenu()" href="#">Home</a></li>
+                <li><a onclick="closeNavMenu()" href="#about">About Me</a></li>
+                <li><a onclick="closeNavMenu()" href="#portfolio">Portfolio</a></li>
+                <li><a onclick="closeNavMenu()" href="#contact">Contact</a></li>
             </div>
             <div class="nav-right">
-                <li><a href="#">Sign Up</a></li>
-                <li><a class="sign-in" href="#">Sign In</a></li>
                 <li class="topnav"><button id="dropdown-icon" onClick="navMenu()">&#9660</button></li>
             </div>         
         </ul>
 </nav>
     <div class="section-1">
-        <div class="login">
+        <div class="text-container">
             <div>
-                <h1>Example Website</h1>
+                <h1>J. Gabriel Bruce</h1>
+                <h2>Welcome to my profile site</h2>
                 <h2>Enjoy the music</h2>
                 <h2>Leave me a message</h2>
                 <h2>Have Fun!</h2>
@@ -46,28 +46,52 @@
         <img class="profile" src="profile.jpg">
         <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/UifHKChtzDI?rel=0;&autoplay=1&loop=1&playlist=UifHKChtzDI" frameborder="0" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>
     </div>
-    <header>
-        <h1 class="section-2-header">Superb Content</h1>
-    </header>
+    <div id="about"></div>
+    <div class="text-container">
+        <h1 class="straighten-text">About Me</h1>
+    </div>
     <div class="section-2">
         <div class="box">
             <div class="icon">&#9759</div>
-            <label>Chat with me</label>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <label>Get to Know Me</label>
+            <p>My name is J. Gabriel Bruce. I have a degree in Biomedical Biology and Biochemistry. I am also a certified Front End Software Developer. I live in Grimes, Iowa with my wife,  daughter, and crazy German Shepherd.
+                <br><br>
+                I am currently working as the Hospital Services Department Lead for a large blood center in Iowa. I coordinate a team of over 50 employees in charge of blood reference, laboratory testing, component manufacturing, and product management.
+                <br><br>
+                I love working with computers and programming. I'm always trying to learn new things.</p>
         </div>
         <div class="box">
             <div class="icon">&#9759</div>
-            <label>Learn to Code</label>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <label>Skills</label>
+            <p>Team Leadership<br>
+                Production Logistics<br>
+                HTML<br>
+                CSS<br>
+                JavaScript<br>
+                Git<br>
+                JSON<br>
+                JQuery<br>
+                Bootstrap<br>
+                AJAX<br>
+                C#<br>
+                PHP<br><br>
+                I'm always trying to learn new things!
+            </p>
         </div> 
         <div class="box">
             <div class="icon">&#9759</div>
-            <label>Gain Skills</label>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <label>Hobbies and Interests</label>
+            <p>Software Development<br>
+                Woodworking<br>
+                Music<br>
+                Gardening<br>
+                Cooking<br>
+                Poker<br>
+            </p>
         </div> 
     </div>
-    
-    <h1 id="portfolio" class="portfolio-target">View some of my work</h1>
+    <div id="portfolio" class="overflow-section">
+    <h2 class="portfolio-target">View some of my work</h2>
     <div class="section-3">
         <div class="codepen">
             <p data-height="550" data-theme-id="0" data-slug-hash="pwdYVr" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Weather App" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/pwdYVr/">Weather App</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
@@ -94,82 +118,94 @@
             <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
         </div>
     </div>
-
-    <div class="cube-container-grid">
+    
+    <div id="cube-container" class="cube-container-grid">
         <div id="cube-buttons-left" class="cube-buttons">
-            <button onclick="turn('front')">front</button>
-            <button onclick="turn('back')">back</button>
-            <button onclick="turn('left')">left</button>
-            <button onclick="turn('right')">right</button>
-            <button onclick="turn('top')">top</button>
-            <button onclick="turn('bottom')">bottom</button>
+            <button onclick="turn('front')">Calculator</button>
+            <button onclick="turn('back')">Local Weather</button>
+            <button onclick="turn('left')">Pomodoro Clock</button>
+            <button onclick="turn('right')">Wiki Search</button>
+            <button onclick="turn('top')">Tic-Tac-Toe</button>
+            <button onclick="turn('bottom')">Quote Generator</button>
         </div>
         <div></div>
         <div class="cube-container">
             <div id="cube" class="turn-front">
                 <div id="front-face" class="front face-container">
                     <div class="side-1">
-                        <p data-height="100%" data-theme-id="0" data-slug-hash="pwdYVr" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Weather App" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/pwdYVr/">Weather App</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        <p data-height="100%" data-theme-id="0" data-slug-hash="QMKjqr" data-default-tab="css,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Calculator (Censored)" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/QMKjqr/">Calculator (Censored)</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
                     </div>
-                    <div class="side-2">front2</div>
+                    <div class="side-2">
+                        <p data-height="100%" data-theme-id="0" data-slug-hash="PKOQXG" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Simon" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/PKOQXG/">Simon</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>
                 </div>
                 <div id="back-face" class="back face-container">
                     <div class="side-1">
-                        <p data-height="100%" data-theme-id="0" data-slug-hash="QMKjqr" data-default-tab="html,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Calculator (Censored)" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/QMKjqr/">Calculator (Censored)</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        <p data-height="100%" data-theme-id="0" data-slug-hash="pwdYVr" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Weather App" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/pwdYVr/">Weather App</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                        
                     </div>
-                    <div class="side-2">back2</div>
+                    <div class="side-2">
+                        <p data-height="100%" data-theme-id="0" data-slug-hash="mwYrpo" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Twitch.tv App" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/mwYrpo/">Twitch.tv App</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>
                 </div>
                 <div id="left-face" class="left face-container">
                     <div class="side-1">
-                        <p data-height="100%" data-theme-id="0" data-slug-hash="EvWrVj" data-default-tab="html,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Pomodoro Timer" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/EvWrVj/">Pomodoro Timer</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        <p data-height="100%" data-theme-id="0" data-slug-hash="EvWrVj" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Pomodoro Timer" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/EvWrVj/">Pomodoro Timer</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
                     </div>
-                    <div class="side-2">left2</div>
+                    <div class="side-2">
+                        <p data-height="100%" data-theme-id="0" data-slug-hash="ZKdpEM" data-default-tab="html,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Tribute Page" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/ZKdpEM/">Tribute Page</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>
                 </div>
                 <div id="right-face" class="right face-container">
                     <div class="side-1">
-                        <p data-height="100%" data-theme-id="0" data-slug-hash="MoGrKb" data-default-tab="html,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Wikipedia Viewer" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/MoGrKb/">Wikipedia Viewer</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        <p data-height="100%" data-theme-id="0" data-slug-hash="MoGrKb" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Wikipedia Viewer" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/MoGrKb/">Wikipedia Viewer</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
                     </div>
-                    <div class="side-2">right2</div>
+                    <div class="side-2">Under Construction!</div>
                 </div>
                 <div id="top-face" class="top face-container">
                     <div class="side-1">
                         <p data-height="100%" data-theme-id="0" data-slug-hash="qXjmBW" data-default-tab="js,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Tic Tac Toe" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/qXjmBW/">Tic Tac Toe</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
                     </div>
-                    <div class="side-2">top2</div>
+                    <div class="side-2">Under Construction!</div>
                 </div>
                 <div id="bottom-face" class="bottom face-container">
                     <div class="side-1">
                         <p data-height="100%" data-theme-id="0" data-slug-hash="EXWdwM" data-default-tab="html,result" data-user="gabrielbruce" data-embed-version="2" data-pen-title="Quote Machine" class="codepen">See the Pen <a href="https://codepen.io/gabrielbruce/pen/EXWdwM/">Quote Machine</a> by J. Gabriel Bruce (<a href="https://codepen.io/gabrielbruce">@gabrielbruce</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                     <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
                     </div>
-                    <div class="side-2">bottom2</div>
+                    <div class="side-2">Under Construction!</div>
                 </div>
             </div>
         </div>
         <div></div>
         <div id="cube-buttons-right" class="cube-buttons">
-            <button onclick="turnFlip('front')">frontFlip</button>
-            <button onclick="turnFlip('back')">backFlip</button>
-            <button onclick="turnFlip('left')">leftFlip</button>
+            <button onclick="turnFlip('front')">Simon</button>
+            <button onclick="turnFlip('back')">Twitch Streams</button>
+            <button onclick="turnFlip('left')">Sir Humphry Davy (first project)</button>
             <button onclick="turnFlip('right')">rightFlip</button>
             <button onclick="turnFlip('top')">topFlip</button>
             <button onclick="turnFlip('bottom')">bottomFlip</button>
         </div>
     </div>
-    
-    <hr>
+    </div>
+
     <div id="contact" class="contact">
-        <h1>Contact Me!</h1>
+        <div class="text-container">
+            <h1 class="straighten-text">Contact Me!</h1>
+        </div>
         <form name="contactForm" method="post" action="email.php">
         <input type="text" placeholder="First Name" name="first_name">
         <input type="text" placeholder="Last Name" name="last_name">
         <br>
-        <input type="email" placeholder="e-mail" name="email">
+        <input contenteditable="true" type="email" placeholder="Your e-mail" name="email">
         <br>
         <input type="text" placeholder="Subject" name="subject">
         <br>
@@ -186,7 +222,6 @@
                 <div>
                     <a href="https://www.linkedin.com/in/j-gabriel-bruce-a1a731129/" target="_blank"><i class="fa fa-linkedin"></i>
                     <h2>LinkedIn</h2></a>
-                    
                 </div>
                 <div>
                     <a href="https://www.freecodecamp.com/gabrielbruce" target="_blank"><i class="fa fa-free-code-camp"></i>

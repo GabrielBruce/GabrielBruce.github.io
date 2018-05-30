@@ -5,6 +5,14 @@ function loaded(){
         document.getElementById("loaded-wrapper").style.display = "none";
         document.getElementById("loading-container").style.display = "none";
     }, 5000)
+    document.getElementById("cube-container").addEventListener("mouseover", function(){
+        cubeButtonMenuLeft();
+        cubeButtonMenuRight();
+    })
+    document.getElementById("cube-container").addEventListener("touchstart", function(){
+        cubeButtonMenuLeft();
+        cubeButtonMenuRight();
+    })
 }
 
 setTimeout(loaded, 4000);
@@ -14,12 +22,17 @@ function navMenu(){
     var menu = document.getElementById("dropdown-menu");
     if (menu.className == ("")){
         menu.className += " responsive";
-        icon.innerHTML = "&#9650";
     }
     else {
         menu.className = "";
-        icon.innerHTML = "&#9660";
     }
+}
+
+function closeNavMenu(){
+    var icon = document.getElementById("dropdown-icon");
+    var menu = document.getElementById("dropdown-menu");
+    menu.className = "";
+    icon.innerHTML = "&#9660";
 }
 
 function turn(val) {
@@ -69,4 +82,30 @@ function flip() {
         document.getElementById("top-face").classList.toggle("flipped");}
     else if (curFace == "turn-bottom") {
         document.getElementById("bottom-face").classList.toggle("flipped");}
+}
+
+function cubeButtonMenuLeft(){
+    var children = document.getElementById("cube-buttons-left").children;
+    var i = 0;
+    function open(){
+        children[i].classList.add("cube-buttons-left-enter");
+        i++;
+        if (i < children.length){
+            setTimeout(open, 100);
+        }
+    }
+    open();
+}
+
+function cubeButtonMenuRight(){
+    var children = document.getElementById("cube-buttons-right").children;
+    var i = 0;
+    function open(){
+        children[i].classList.add("cube-buttons-right-enter");
+        i++;
+        if (i < children.length){
+            setTimeout(open, 100);
+        }
+    }
+    open();
 }

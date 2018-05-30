@@ -1,10 +1,7 @@
 body{
     margin: 0 auto;
-    background: lightgray; /*if gradient isn't supported*/
-    background: -webkit-linear-gradient(lightblue, white); /*for Safari 5.1-6.8*/
-    background: -o-linear-gradient(lightblue, white); /*for Opera 11.1 to 12.0*/
-    background: -moz-linear-gradient(lightblue, white); /*for Firefox 3.6 to 15*/
-    background: linear-gradient(lightblue, white);/*standard notation*/ 
+    background-image: url("michael-carnevale-430826.jpg");
+    background-size: auto;
     width: 100%;
 }
 
@@ -67,9 +64,32 @@ body{
 
 /*---Section 1---*/
 
+.text-container{
+    min-width: 400px;
+    max-width: 600px;
+    margin: 40px auto 40px auto;
+    background: linear-gradient(-45deg, lightgray, gray);
+    transform: skew(-20deg);
+    padding: 20px;
+    box-shadow: 10px 10px 10px 5px gray;
+    border: 2px solid black;
+}
+
+.straighten-text{
+    transform: skew(20deg);
+}
+
+.section-1 .text-container{
+    margin: 40px;
+    width: 450px;
+    height: 300px;
+    line-height: 60px;
+    transform: skew(0);
+}
+
 .section-1{
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 100px auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 40px 0 50px 0;
@@ -89,14 +109,6 @@ h2{
     font-size: 30px;
 }
 
-form{
-    padding-top: 30px;
-}
-
-input{
-    margin-bottom: 15px;
-}
-
 img{
     max-width: 55%;
     border: 4px outset #ff9000;
@@ -108,21 +120,20 @@ img{
     max-width: 90%;
     grid-column: 1 / 3;
     box-shadow: 10px 10px 10px 5px gray;
+    margin-bottom: 60px;
 }
 
 /*---Section 2---*/
 
-.section-2{
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+#about{
+    padding-bottom: 20px;
 }
 
-.section-2-header{
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 40px;
+.section-2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 150px;
 }
 
 .box{   
@@ -149,9 +160,18 @@ label{
 .section-3{
     display: none;/*Hidden to show cube*/
 }
-
+#portfolio{
+    padding-bottom: 40px;
+}
 .portfolio-target{
-    padding-top: 40px;
+    text-align: center;
+    margin-bottom: -30px;
+    width: 500px;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(-45deg, lightgray, gray);
+    box-shadow: 10px 10px 10px 5px gray;
+    border: 2px solid black;
 }
 
 .codepen{
@@ -161,13 +181,18 @@ label{
 
 /*---Code Cube---*/
 
+.overflow-section{
+    padding-top: 60px;
+    overflow: hidden;
+}
+
 .cube-container-grid{
     --button-width: 350px;
     --button-height: 100px;
     display: grid;
     grid-template-columns: var(--button-width) auto auto auto var(--button-width);
     align-items: center;
-    margin: 0 auto;
+    margin: 0 auto 100px auto;
 }
 
 .cube-buttons{
@@ -176,33 +201,45 @@ label{
 
 .cube-buttons button{
     border: 2px outset #606060;
-    background: gray;
     color: white;
     font-size: 35px;
     width: var(--button-width);
     height: var(--button-height);
     display: block;
-    transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
 }
 
 #cube-buttons-left button{
+    background: linear-gradient(to left,silver, black);
     box-shadow: 5px 5px 5px black;
-    transform: skewY(30deg);
+    transform: translateX(-500px) translateY(-500px) rotateZ(-180deg) scale(0.01, 0.01);
     position: relative;
     left: 0;
 }
 
+#cube-buttons-left .cube-buttons-left-enter{
+    transition: transform 1200ms, width 1200ms;
+    transform: skewY(30deg) scale( 1, 1);
+}
+
 #cube-buttons-right button{
+    background: linear-gradient(to right, silver, black);
     box-shadow: -5px 5px 5px black;
-    transform: skewY(-30deg);
+    transform: translateX(500px) translateY(-500px) rotateZ(180deg) scale(0.01, 0.01);
     position: relative;
     right: 0;
+}
+
+#cube-buttons-right .cube-buttons-right-enter{
+    width: calc(var(--button-width) + 10px);
+    transition: transform 1200ms, width 0.5s;
+    transform: skewY(-30deg) scale( 1, 1);
 }
 
 #cube-buttons-left button:hover{
     text-shadow: 0 0 10px white;
     box-shadow: 5px 5px 5px #ff9000;
     width: calc(var(--button-width) + 10px);
+    transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
 }
 
 #cube-buttons-left button:focus{
@@ -210,13 +247,15 @@ label{
     box-shadow: 5px 5px 15px lightgreen;
     border: 2px outset lightgreen;
     width: calc(var(--button-width) + 10px);
+    transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
 }
 
 #cube-buttons-right button:hover{
     text-shadow: 0 0 10px white;
     box-shadow: -5px 5px 5px #ff9000;
     width: calc(var(--button-width) + 10px);
-    transform: translateX(-10px) skewY(-30deg);
+    transform: translateX(-10px) translateY(3px) skewY(-30deg);
+    transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
 }
 
 #cube-buttons-right button:focus{
@@ -224,7 +263,8 @@ label{
     box-shadow: -5px 5px 15px lightgreen;
     border: 2px outset lightgreen;
     width: calc(var(--button-width) + 10px);
-    transform: translateX(-10px) skewY(-30deg);
+    transform: translateX(-10px) translateY(3px) skewY(-30deg);
+    transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
 }
 
 .cube-container{
@@ -234,6 +274,7 @@ label{
 	height: var(--cube-size);
 	perspective: calc(var(--cube-size) * 9/10);
 	margin: 50px auto;
+    z-index: 10;
 }
 #cube{
 	width: var(--cube-size);
@@ -297,12 +338,18 @@ label{
     text-align: center;
 }
 
+form{
+    padding-top: 30px;
+}
+
 .contact input{
     font-size: 20px;
+    margin-bottom: 15px;
     text-align: center;
     border: 3px solid black;
     box-shadow: 3px 3px 3px 3px lightblue;
     border-radius: 20px;
+    width: 250px
 }
 
 .contact textarea{
@@ -311,6 +358,10 @@ label{
     border: 3px solid black;
     box-shadow: 3px 3px 3px 3px lightblue;
     border-radius: 24px;
+}
+
+input[type="email"]{
+    width: 375px;
 }
 
 input[type="submit"]{
@@ -323,9 +374,10 @@ input[type="submit"]{
 
 .footer{
     margin-top: 50px;
-    background: gray;
+    background: linear-gradient(to bottom, silver, gray);
     justify-items: center;
     text-align: center;
+    border: 2px solid gray;
 }
 
 .footer-container{
@@ -334,7 +386,6 @@ input[type="submit"]{
 }
 
 .footer h1{
-    color: white;
     margin: 15px;
 }
 
@@ -393,7 +444,9 @@ nav a{
 
 nav a:hover{
     background: linear-gradient(to right, white, #ff9000);
-    text-shadow: 2px 2px 2px #ff9000;
+    text-shadow: 2px 2px 2px #ff9000, 0 0 0.5px black;
+    font-weight: bold;
+    transition: text-shadow 0.5s;
 }
 
 #dropdown-icon{
@@ -411,30 +464,66 @@ nav a:hover{
 
 #dropdown-icon:hover{
     box-shadow: 0 0 2px 2px black;
+    transition: box-shadow 0.5s;
 }
 
 /*---Media---*/
 
 @media screen and (max-width: 1200px), (max-device-width: 1024px){
+    .section-1 .text-container{
+        margin-left: 60px;
+    }
     .cube-container-grid{
         --button-width: 150px;
+        padding-top: 50px;
+        grid-template-columns: var(--button-width) auto auto auto var(--button-width);
     }
     .cube-container{
         --cube-size: 600px;
+    }
+    #cube-buttons-right button:hover{
+        text-shadow: 0 0 10px white;
+        box-shadow: -5px 5px 5px #ff9000;
+        width: calc(var(--button-width) + 20px);
+        transform: translateX(-10px) skewY(-30deg);
+        transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
+    }
+
+    #cube-buttons-right button:focus{
+        text-shadow: 2px 2px 15px lightgreen, -2px -2px 15px lightgreen;
+        box-shadow: -5px 5px 15px lightgreen;
+        border: 2px outset lightgreen;
+        width: calc(var(--button-width) + 20px);
+        transform: translateX(-10px) skewY(-30deg);
+        transition: box-shadow 1s, width 0.5s, transform 0.5s, text-shadow 1s, border 1s;
+    }
+        #cube-buttons-right .cube-buttons-right-enter{
+        width: calc(var(--button-width) + 10px);
+        transition: transform 1200ms, width 1.2s;
+        transform: skewY(-30deg) scale( 1, 1);
+    }
+    .cube-buttons button{
+        font-size: 25px;
     }
 }
 
 @media screen and (max-width: 800px), (max-device-width: 736px), (max-device-height: 375px){
     .portfolio-target{
-        margin-bottom: -50px;
+        margin-bottom: -45px;
     }
     .cube-container-grid{
-        --button-width: 200px;
+        --button-width: 150px;
         --button-height: 60px;
+        padding-top: 0px;
+        grid-template-columns: var(--button-width) auto auto auto var(--button-width);
     }
     .cube-container{
         --cube-size: 450px;
     }
+    .overflow-section{
+    padding-top: 40px;
+    overflow: hidden;
+}
 }
 
 @media screen and (max-width: 520px), (max-device-width: 425px){
@@ -444,12 +533,10 @@ nav a:hover{
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    
     nav a{
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    
     .responsive li{
         float: none;
         display: block;
@@ -459,7 +546,7 @@ nav a:hover{
         display: block;
         border: none;
     }
-    .responsive li a:not(.sign-in){
+    .responsive li a:not([href="#contact"]){
         border-bottom: 1px solid black;
     }
     #dropdown-menu:not(.responsive) li:not(.topnav){
@@ -469,26 +556,30 @@ nav a:hover{
         display: block;
     }
     .responsive #dropdown-icon{
+        transform: rotateX(180deg);
         bottom: 2px;
         top: auto;
     }
     /*---Mobile Section 1---*/
     .section-1{
-        grid-template-columns: 100% ;
+        grid-template-columns: 100%;
     }
     .profile{
         max-width: 50%;
     }
     .video{
         grid-column: 1 / 1;
-        height: auto;
-        width: auto;
+        height: 350px;
+        width: 550px;
     }
     /*---Mobile Section 2---*/
     .section-2{
         grid-template-columns: repeat(1, 1fr);
     }
     /*---Mobile Section 3---*/
+    .portfolio-target{
+        margin-bottom: 20px;
+    }
     .section-3{
         display: block;
     }
